@@ -1,34 +1,22 @@
 const num = Number(prompt("Zadej číslo z rulety (0-36)"))
-const even = (num % 2 == 0)     //sudé číslo
+const even = (num % 2 === 0)     //sudé číslo
 
-if (num === 0) {
-    text = "Číslo " + num + " je jako jediné číslo zelené barvy";
-}
-
-if (even >= 1 && even <= 10) {
-    text = "Číslo " + even + " je sudé a černé barvy";
-    } else {
-        text = "Číslo " + num + "je liché a červené barvy";
-    }
-
-if (even >= 11 && even <= 18) {
-        text = "Číslo " + num + " je sudé a červené barvy";
-    } else {
-        text = "Číslo " + num + "je liché a černé barvy";
-    }
-
-if (even >= 19 && even <= 28) {
+if (num < 0 || num > 36) {
+    document.body.innerHTML += `<p>Zadané číslo se nenachází na ruletě.</p>`
+    } else if (num === 0) {
+        text = "Číslo " + num + " je jako jediné číslo zelené barvy";
+    } else if ((num >= 1 && num <= 10) || (num >= 19 && num <= 28)) {
+     if (even) {
         text = "Číslo " + num + " je sudé a černé barvy";
     } else {
-        text = "Číslo " + num + "je liché a červené barvy";
+        text = "Číslo " + num + " je liché a červené barvy";
     }
-    
-if (even >= 29 && even <= 36) {
+} else {
+     if (even) {
         text = "Číslo " + num + " je sudé a červené barvy";
     } else {
         text = "Číslo " + num + " je liché a černé barvy";
     }
-
-
+}
 
 document.body.innerHTML += `<p>${text}.</p>`
