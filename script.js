@@ -2,7 +2,7 @@ const num = Number(prompt("Zadej číslo z rulety (0-36)"))
 const even = (num % 2 === 0)     //sudé číslo
 
 if (num < 0 || num > 36) {
-    document.body.innerHTML += `<p>Zadané číslo se nenachází na ruletě.</p>`
+    text = "Zadané číslo " + num + " se nenachází na ruletě"
     } else if (num === 0) {
         text = "Číslo " + num + " je jako jediné číslo zelené barvy";
     } else if ((num >= 1 && num <= 10) || (num >= 19 && num <= 28)) {
